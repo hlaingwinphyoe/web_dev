@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'mm';
+    font-weight: normal;
+    src: url("../fonts/MyanmarSagar.ttf");
+}
+:root{
+    --primary : #2CD1EE;
+    --primary-soft: rgba(44, 209, 238, 0.8);
+    --secondary : #707070;
+    --secondary-soft: #f2f2f2;
+    --light : #ffffff;
+    --dark : #3a3b3c;
+    --br : 5px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Mono', 'mm';
+    color: var(--secondary);
+}
+
+.divider{
+    background: var(--secondary);
+    height: 5px;
+    border-radius: var(--br);
+}
+body{
+    transition: 0.5s;
+}
+.app{
+    width: 700px;
+    margin: 100px auto;
+}
+
+.output{
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand-container{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 50px;
+}
+
+.brand{
+    margin-left: 10px;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.result-container{
+
+}
+
+.result{
+    font-size: 50px;
+    font-weight: bold;
+}
+.calc{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.container{
+    width: 150px;
+}
+.container label{
+    display: block;
+}
+.input,.from,.to{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: var(--br);
+    border: 1px solid var(--secondary);
+}
+.input:focus,select:focus,button:focus{
+    outline: none;
+}
+.input{
+    text-align: right;
+}
+
+.calc-btn{
+    width: 100%;
+    height: 100%;
+    border-radius: var(--br);
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    cursor: pointer;
+    color: var(--light);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.calc-btn:active{
+    background: var(--primary-soft);
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+select::-ms-expand {	display: none; }
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+@-moz-document url-prefix(){
+    select { width: 110%; background-position: right 30px center !important; border: none !important;}
+}
+
+.record {
+    /*border-collapse: collapse;*/
+    width: 100%;
+    margin-top: 20px;
+}
+
+.record td, .record th {
+    /*border: 1px solid #ddd;*/
+    padding: 8px;
+    border-radius: var(--br);
+}
+
+.record tr:nth-child(even){background-color: var(--secondary-soft)}
+
+.record tr:hover {background-color: #ddd;}
+
+.record th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.record th:last-child{
+    text-align: right;
+}
+
+.record tr td:last-child{
+    text-align: right;
+}
+
+#rowSpacer td{
+    text-align: center;
+}
+
+.mode-change{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--secondary);
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+}
+.mode-change .fas{
+    color: var(--light);
+}
+
+
+@media screen and (max-width: 480px) {
+    .app{
+        width: 96%;
+        margin: 20px auto;
+    }
+    .output{
+        flex-flow: column;
+        align-items: flex-end;
+    }
+    .brand-container{
+        width: 100%;
+    }
+    .calc{
+        flex-wrap: wrap;
+    }
+    .container{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .from-container,.to-container{
+        width: 46%;
+    }
+    .input,.from,.to{
+        padding: 10px;
+    }
+    .calc-btn{
+        padding: 20px;
+    }
+}
